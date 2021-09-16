@@ -38,11 +38,19 @@ while 1:
         character.draw_now(30, y)
         y -= 2
         delay(0.01)
-
     x = 30
     while x < 400:
         clear_canvas_now()
         grass.draw_now(400, 30)
         character.draw_now(x, 90)
         x += 2
+        delay(0.01)
+
+    for i in range(0, 360):
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        angle =  i * 2 * math.pi / 360
+        x += math.cos(angle) * 4
+        y += math.sin(angle) * 4
+        character.draw_now(x, y)
         delay(0.01)
